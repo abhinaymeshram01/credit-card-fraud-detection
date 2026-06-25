@@ -13,27 +13,6 @@ An **end-to-end Machine Learning system** that detects fraudulent credit card tr
 
 ---
 
-## 🏗️ Architecture
-┌─────────────────────┐        HTTP Request        ┌──────────────────────────┐
-│                     │  ─── POST /predict ──────► │                          │
-│   Streamlit UI      │                             │   FastAPI Backend        │
-│   (app.py)          │  ◄── JSON Response ───────  │   (main.py)              │
-│                     │                             │                          │
-└─────────────────────┘                             └────────────┬─────────────┘
-                                                                 │
-                                                                 ▼
-                                                    ┌──────────────────────────┐
-                                                    │  XGBoost Model           │
-                                                    │  + StandardScaler        │
-                                                    │  (model.pkl/scaler.pkl)  │
-                                                    └──────────────────────────┘
-
-Hosting:
-  Streamlit UI  ──►  Streamlit Cloud (Free)
-  FastAPI       ──►  Run locally with Uvicorn
-
-  ---
-
 ## 📌 Key Features
 
 - **🔍 Single Transaction Check** — Enter transaction details for instant fraud probability scoring via API
@@ -110,11 +89,11 @@ Raw Data (284,807 rows)
 
 | Metric | Score |
 |---|---|
-| ROC-AUC | **add yours** |
-| PR-AUC | **add yours** |
-| F1-Score (Fraud) | **add yours** |
-| Recall (Fraud) | **add yours** |
-| Precision (Fraud) | **add yours** |
+| ROC-AUC | **0.977** |
+| PR-AUC | **0.869** |
+| F1-Score (Fraud) | **0.86** |
+| Recall (Fraud) | **0.82** |
+| Precision (Fraud) | **0.93** |
 
 ---
 
